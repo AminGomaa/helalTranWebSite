@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html  dir="rtl" align="right">
+<head>
+    <title>@Page.Title</title>
+    <meta name="viewport" content="width=device-width,initial scale=1" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!--navbar-->
+    <nav class="navbar navbar-default navbar-fixed-top" >
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="~/Home" class="navbar-brand">
+                    <img src="~/images/log.jpg" class="logo-size" />
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class=" nav navbar-nav navbar-right">
+                    <li>
+                        <a href="~/Jobs">
+                            اعدادات
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="~/Home/Contact">
+                            اتصل بنا
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/Home/About">
+                            حول الشركة
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Home">
+                            الرئيسية
+                            <i class="glyphicon glyphicon-home"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                        {
+                            <input type="text" name="searchName" id="searchName"
+                                   placeholder="ابحث هنا.." />
+                        }
+
+
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row" style="min-height:550px;">
+
+            @RenderBody()
+
+        </div>
+    </div>
+    <!--foter-->
+    <footer class="myfooter">
+        <div class="container ">
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <h3>اتصل بنا  <i class="glyphicon glyphicon-phone-alt"></i>   </h3>
+                    <h3><font color="white">0537647279 - 0533071949</font><i class="glyphicon glyphicon-phone"></i></h3>
+                        
+</div>
+                <div class="col-md-4">
+                    <h3>تواصل معنا  <i class="glyphicon glyphicon-envelope"></i>   </h3>
+                    <ul>
+                        <li><a href="#">صفحتنا على الفيس بوك</a></li>
+                        <li><a href="#">تابعنا على تويتر</a></li>
+                        <li><a href="#">شاهدنا على اليوتيوب</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>
+                        روابط هامة
+                        <i class="glyphicon glyphicon-globe"></i>
+                    </h3>
+                    <ul>
+                        <li><a href="#">نقل اساس خارج الرياض</a></li>
+                        <li><a href="#">تنظيف وتعقيم المنازل</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subfooter">
+                <span>Amin Gomaa.....amingomaa@gmail.com....+201006933724</span>
+            </div>
+        </div>
+    </footer>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

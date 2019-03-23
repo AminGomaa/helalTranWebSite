@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Helalzahbi_Trans.Models.Job>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="panel panel-default" style="padding:15px">
+    <h1 class="panel-heading">نتائج البحث</h1>
+    <div class="row">
+        @foreach (var subitem in Model)
+        {
+
+            <div class="col-md-3 thumbnail" style="margin-left:20px ; margin-bottom:30px;height:380px">
+                <img src="~/Uploads/@subitem.jobimage" />
+                <h3>@Html.DisplayFor(modelitem => subitem.jobtitl)</h3>
+                <h5>@Html.DisplayFor(modelItem => subitem.jobcontent)</h5>
+                @Html.ActionLink("عرض التفاصيل", "Details", new { jobid = subitem.id }, new { @class = "btn btn-primary" })
+            </div>
+        }
+
+

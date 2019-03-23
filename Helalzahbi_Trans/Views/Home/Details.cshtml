@@ -1,0 +1,38 @@
+﻿@model Helalzahbi_Trans.Models.Job
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            <img src="~/Uploads/@Html.DisplayFor(model=>model.jobimage)"
+                 class="thumbnail"
+                 style="width:280px; height:150px;" />
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.category.categName)
+        </dd>
+
+
+        <dd>
+            @Html.DisplayFor(model => model.jobtitl)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobcontent)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("العودة الى الصفحة الرئيسية", "Index",new {@class="btn btn-default" } )
+</p>

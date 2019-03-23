@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Helalzahbi_Trans.Models.Category>
+
+@{
+    ViewBag.Title = "قائمة الخدمات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>الحدمات</h2>
+
+<p>
+    @Html.ActionLink("انشاء خدمة", "Create")
+</p>
+<table class="table navbar-form" >
+    <tr >
+        <th>
+            @Html.DisplayNameFor(model => model.categName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catDesc)
+        </th>
+    
+    </tr>
+
+@foreach (var item in Model) {
+    <tr >
+        <td>
+            @Html.DisplayFor(modelItem => item.categName)
+        </td>
+       
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.id }) |
+            @Html.ActionLink("التفاصيل", "Details", new { id=item.id }) |
+            @Html.ActionLink("جذف", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,28 @@
+﻿@model Helalzahbi_Trans.Models.Category
+
+@{
+    ViewBag.Title = "بيانات الخدمة";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>بيانات الخدمة</h2>
+
+<div dir="rtl">
+    
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dd>
+            @Html.DisplayFor(model => model.categName)
+        </dd>
+       
+        
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("العودة للقائمة", "Index")
+</p>

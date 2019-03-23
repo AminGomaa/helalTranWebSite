@@ -1,0 +1,38 @@
+﻿@model Helalzahbi_Trans.Models.Job
+
+@{
+    ViewBag.Title = "حذف";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3>هل تريد حذف الخدمة المحددة؟؟</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dd>
+            @Html.DisplayFor(model => model.category.categName)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobtitl)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.jobcontent)
+        </dd>
+        <dd>
+            <img src="~/Uploads/@Html.DisplayFor(model => model.jobimage)" class="thumbnail" style="width:48px;height:48px;" />
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="تاكيد الحذف" class="btn btn-danger" /> |
+            @Html.ActionLink("العودة للقائمة", "Index")
+        </div>
+    }
+</div>

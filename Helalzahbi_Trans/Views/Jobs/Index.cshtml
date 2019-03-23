@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Helalzahbi_Trans.Models.Job>
+
+@{
+    ViewBag.Title = "الخدمات التي تقدمها الشركة";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("انشاء خدمة جديدة", "Create")
+</p>
+<table class="table table-striped table-bordered table-hover" >
+    <tr align="center" dir="rtl">
+       
+        <th>
+            @Html.DisplayNameFor(model => model.jobtitl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jobcontent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jobimage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr align="left">
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.jobtitl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jobcontent)
+        </td>
+        <td>
+            <img src="~/Uploads/@Html.DisplayFor(model => item.jobimage)" class="thumbnail" style="width:48px;height:48px;" />
+        </td>
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.id }) |
+            @Html.ActionLink("تفاصيل", "Details", new { id=item.id }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

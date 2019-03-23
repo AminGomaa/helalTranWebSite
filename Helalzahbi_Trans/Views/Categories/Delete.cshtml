@@ -1,0 +1,36 @@
+﻿@model Helalzahbi_Trans.Models.Category
+
+@{
+    ViewBag.Title = "حذف";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حذف</h2>
+
+<h3>هل انت متاكد من حذف الخدمة الحالية..؟؟</h3>
+<div align="justify">
+   
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dd>
+            @Html.DisplayFor(model => model.categName)
+        </dd>
+       
+        <dd>
+            @Html.DisplayFor(model => model.catDesc)
+        </dd>
+       
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="تاكيد الحذف" class="btn btn-danger" /> |
+            @Html.ActionLink("العودة للقائمة", "Index")
+        </div>
+    }
+</div>
